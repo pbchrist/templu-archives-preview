@@ -77,24 +77,24 @@ a { color: var(--gold); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 88% 78% at 50% 42%,
+    radial-gradient(ellipse 95% 88% at 50% 45%,
       transparent 0%,
-      transparent 38%,
-      rgba(4, 1, 8, .42) 62%,
-      rgba(2, 0, 6, .78) 82%,
-      #020106 100%),
-    linear-gradient(90deg, rgba(2, 1, 6, .72) 0%, rgba(2, 1, 6, .28) 10%, transparent 22%, transparent 78%, rgba(2, 1, 6, .28) 90%, rgba(2, 1, 6, .72) 100%),
-    linear-gradient(180deg, rgba(2, 1, 6, .55) 0%, transparent 18%, transparent 78%, rgba(2, 1, 6, .7) 100%);
+      transparent 55%,
+      rgba(4, 1, 8, .18) 78%,
+      rgba(2, 0, 6, .38) 92%,
+      rgba(2, 0, 6, .55) 100%),
+    linear-gradient(90deg, rgba(2, 1, 6, .28) 0%, transparent 12%, transparent 88%, rgba(2, 1, 6, .28) 100%),
+    linear-gradient(180deg, rgba(2, 1, 6, .22) 0%, transparent 16%, transparent 88%, rgba(2, 1, 6, .32) 100%);
 }
 .flicker {
   position: absolute;
   inset: 0;
   mix-blend-mode: soft-light;
-  opacity: .42;
+  opacity: .22;
   background:
-    radial-gradient(ellipse 55% 45% at 18% 28%, rgba(255, 190, 110, .55) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 82% 24%, rgba(255, 170, 80, .45) 0%, transparent 68%),
-    radial-gradient(ellipse 40% 35% at 50% 70%, rgba(255, 140, 60, .22) 0%, transparent 70%);
+    radial-gradient(ellipse 55% 45% at 18% 28%, rgba(255, 190, 110, .4) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 82% 24%, rgba(255, 170, 80, .32) 0%, transparent 68%),
+    radial-gradient(ellipse 40% 35% at 50% 70%, rgba(255, 140, 60, .16) 0%, transparent 70%);
 }
 
 .skip {
@@ -124,7 +124,7 @@ a { color: var(--gold); }
 .hero-glass {
   width: min(100%, 40rem);
   padding: 1.1rem 1.2rem 1.35rem;
-  background: rgba(8, 4, 14, .55);
+  background: rgba(8, 4, 14, .42);
   border: 1px solid rgba(201, 182, 232, .28);
   box-shadow: 0 18px 48px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 220, 180, .12);
   backdrop-filter: blur(10px);
@@ -445,8 +445,35 @@ button[aria-pressed="true"] {
 
 
 @media (max-width: 640px) {
-  .painted-bg { background-position: center center; }
-  .hero { min-height: 78vh; padding-top: 2rem; justify-content: center; }
+  .painted-bg { background-position: 62% center; }
+  .vignette {
+    background:
+      radial-gradient(ellipse 98% 92% at 50% 48%,
+        transparent 0%,
+        transparent 62%,
+        rgba(4, 1, 8, .12) 82%,
+        rgba(2, 0, 6, .28) 100%),
+      linear-gradient(90deg, rgba(2, 1, 6, .18) 0%, transparent 14%, transparent 86%, rgba(2, 1, 6, .18) 100%),
+      linear-gradient(180deg, rgba(2, 1, 6, .12) 0%, transparent 14%, transparent 90%, rgba(2, 1, 6, .2) 100%);
+  }
+  .flicker { opacity: .14; }
+  .hero {
+    min-height: 88vh;
+    justify-content: flex-start;
+    padding: 1.1rem .85rem 1.5rem;
+  }
+  .hero-glass {
+    width: min(100%, 22rem);
+    padding: .55rem .7rem .7rem;
+    background: rgba(8, 4, 14, .42);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .hero-glass .ziggurat { width: min(7.5rem, 42vw); margin-bottom: .2rem; }
+  .hero-glass h1 { font-size: clamp(1.35rem, 7vw, 1.85rem); }
+  .hero-glass .eyebrow { font-size: .58rem; margin-bottom: .15rem; }
+  .hero-glass .inscription { font-size: .72rem; margin-top: .15rem; }
+  .hero-glass .lede { font-size: .92rem; margin-top: .35rem; max-width: 18rem; }
   .keyboard { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .door[data-enter="vault"] { min-height: 8rem; }
   .vault-face { height: 14rem; }
@@ -456,14 +483,14 @@ button[aria-pressed="true"] {
   .flicker { animation: warm-flicker 4.2s ease-in-out infinite; }
 }
 @keyframes warm-flicker {
-  0%, 100% { opacity: .38; }
-  18% { opacity: .52; }
-  37% { opacity: .3; }
-  61% { opacity: .48; }
-  82% { opacity: .34; }
+  0%, 100% { opacity: .18; }
+  18% { opacity: .28; }
+  37% { opacity: .14; }
+  61% { opacity: .24; }
+  82% { opacity: .16; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .flicker { animation: none; opacity: .36; }
+  .flicker { animation: none; opacity: .16; }
 }
