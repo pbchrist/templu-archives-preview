@@ -1,0 +1,24 @@
+{
+  "id": "orachys",
+  "title": "Orachys of Tol",
+  "form": "ledger",
+  "place": "The Magical Guild",
+  "enter": "open",
+  "sections": [
+    {
+      "id": "name",
+      "sealed": false,
+      "heading": "The name",
+      "blocks": [
+        {
+          "kind": "fact",
+          "text": "Esteemed Archmage Orachys of Tol is Sory'n's father and head of the Magical Guild."
+        }
+      ]
+    },
+    {
+      "id": "assessment",
+      "sealed": true
+    }
+  ]
+}

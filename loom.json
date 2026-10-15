@@ -1,0 +1,31 @@
+{
+  "root": {
+    "id": "assessment",
+    "title": "The failed Assessment",
+    "leaf": "the-constant"
+  },
+  "streams": [
+    {
+      "id": "fv",
+      "title": "The Furbidden Voyd",
+      "sequel": {
+        "id": "wi",
+        "title": "Wellspring Incatporated"
+      }
+    },
+    {
+      "id": "dp",
+      "title": "The Divergent Path",
+      "sequel": {
+        "id": "jo",
+        "title": "The Jeweled Oculory"
+      },
+      "loopTo": "fv"
+    }
+  ],
+  "beads": [
+    1,
+    2,
+    3
+  ]
+}

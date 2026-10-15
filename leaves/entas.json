@@ -1,0 +1,13 @@
+{
+  "id": "entas",
+  "title": "The En'tas coin",
+  "form": "ledger",
+  "place": "The Furbidden Voyd",
+  "enter": "closed",
+  "sections": [
+    {
+      "id": "coin",
+      "sealed": true
+    }
+  ]
+}

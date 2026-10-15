@@ -1,0 +1,19 @@
+{
+  "refused": "The scratches fall into the Voyd.",
+  "quiet": "The vault grows quiet. These scratches may be offered again after a watch.",
+  "unknownLeaf": "No such leaf was pressed in these stacks.",
+  "vault": "This vault does not open.",
+  "timestream": "This leaf lies in a timestream you have not walked.",
+  "issued": "The stacks cut six marks. They are the only key to this desk. Write them where your eyes can find them.",
+  "known": "The stacks know these marks.",
+  "pressed": "The shorter scratching takes.",
+  "slipRefused": "That shorter scratching does not take.",
+  "bound": "The separate scratchings are bound into one.",
+  "needSix": "Set six claw-marks.",
+  "needShort": "A shorter scratching is four or five claw-marks.",
+  "needTwo": "Set two scratchings the stacks already know.",
+  "seekEmpty": "Nothing you may touch answers that.",
+  "version": "These marks belong to a script the stacks do not keep.",
+  "unheard": "The stacks did not hear that.",
+  "miss": "No such leaf was pressed in these stacks."
+}

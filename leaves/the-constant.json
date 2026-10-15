@@ -1,0 +1,13 @@
+{
+  "id": "the-constant",
+  "title": "The failed Assessment",
+  "form": "ledger",
+  "place": "The knot that does not move",
+  "enter": "closed",
+  "sections": [
+    {
+      "id": "knot",
+      "sealed": true
+    }
+  ]
+}

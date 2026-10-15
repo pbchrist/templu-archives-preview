@@ -1,0 +1,20 @@
+{
+  "id": "the-nyand",
+  "title": "The Nyand",
+  "form": "ledger",
+  "place": "The living ground",
+  "enter": "open",
+  "sections": [
+    {
+      "id": "ground",
+      "sealed": false,
+      "heading": "The ground",
+      "blocks": [
+        {
+          "kind": "fact",
+          "text": "The Nyand is the living ground through which wellsprings bleed."
+        }
+      ]
+    }
+  ]
+}

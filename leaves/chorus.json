@@ -1,0 +1,13 @@
+{
+  "id": "chorus",
+  "title": "The Chorus of Truths",
+  "form": "ledger",
+  "place": "The Divergent Path",
+  "enter": "closed",
+  "sections": [
+    {
+      "id": "colours",
+      "sealed": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "faelspire",
+  "title": "The Royal City of Faelspire",
+  "form": "ledger",
+  "place": "The eternal Catpital",
+  "enter": "open",
+  "sections": [
+    {
+      "id": "city",
+      "sealed": false,
+      "heading": "The city",
+      "blocks": [
+        {
+          "kind": "flavor",
+          "text": "A ledger of names the stacks already keep."
+        },
+        {
+          "kind": "fact",
+          "text": "The Royal City of Faelspire is the eternal Catpital."
+        },
+        {
+          "kind": "fact",
+          "text": "Aard Voreath Templu, the amethyst ziggurat, is the Guild seat, up north. Mount Sylvest stands there, with the Proving Ground on its southern slope. Also within the city: Ebon Heights, the Royal Palace, the Corpus, Eastclaw, Northclaw, Felixiata, and Hatchery Row."
+        },
+        {
+          "kind": "fact",
+          "text": "The Commerce District holds East and West Tradewinds and Barter Crossing. The streets named in the ledger are Low Street, Centerline Street, East High Street, West High Street, and Felixia Street. The Acatdemy has its Amethyst Atrium."
+        },
+        {
+          "kind": "fact",
+          "text": "The Forest Primeval wraps the southern walls."
+        }
+      ]
+    }
+  ]
+}

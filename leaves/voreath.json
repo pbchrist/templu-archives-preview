@@ -1,0 +1,20 @@
+{
+  "id": "voreath",
+  "title": "Voreath",
+  "form": "ledger",
+  "place": "The Magical Guild",
+  "enter": "open",
+  "sections": [
+    {
+      "id": "borrowing",
+      "sealed": false,
+      "heading": "The ordinary art",
+      "blocks": [
+        {
+          "kind": "fact",
+          "text": "Voreath is conventional magic, which borrows from nature."
+        }
+      ]
+    }
+  ]
+}

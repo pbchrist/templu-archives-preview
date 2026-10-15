@@ -1,0 +1,248 @@
+[
+  {
+    "id": "faelspire",
+    "title": "The Royal City of Faelspire",
+    "form": "ledger",
+    "place": "The eternal Catpital",
+    "enter": "open",
+    "sections": [
+      {
+        "id": "city",
+        "sealed": false,
+        "heading": "The city",
+        "blocks": [
+          {
+            "kind": "flavor",
+            "text": "A ledger of names the stacks already keep."
+          },
+          {
+            "kind": "fact",
+            "text": "The Royal City of Faelspire is the eternal Catpital."
+          },
+          {
+            "kind": "fact",
+            "text": "Aard Voreath Templu, the amethyst ziggurat, is the Guild seat, up north. Mount Sylvest stands there, with the Proving Ground on its southern slope. Also within the city: Ebon Heights, the Royal Palace, the Corpus, Eastclaw, Northclaw, Felixiata, and Hatchery Row."
+          },
+          {
+            "kind": "fact",
+            "text": "The Commerce District holds East and West Tradewinds and Barter Crossing. The streets named in the ledger are Low Street, Centerline Street, East High Street, West High Street, and Felixia Street. The Acatdemy has its Amethyst Atrium."
+          },
+          {
+            "kind": "fact",
+            "text": "The Forest Primeval wraps the southern walls."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "voreath",
+    "title": "Voreath",
+    "form": "ledger",
+    "place": "The Magical Guild",
+    "enter": "open",
+    "sections": [
+      {
+        "id": "borrowing",
+        "sealed": false,
+        "heading": "The ordinary art",
+        "blocks": [
+          {
+            "kind": "fact",
+            "text": "Voreath is conventional magic, which borrows from nature."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "the-nyand",
+    "title": "The Nyand",
+    "form": "ledger",
+    "place": "The living ground",
+    "enter": "open",
+    "sections": [
+      {
+        "id": "ground",
+        "sealed": false,
+        "heading": "The ground",
+        "blocks": [
+          {
+            "kind": "fact",
+            "text": "The Nyand is the living ground through which wellsprings bleed."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "soryn",
+    "title": "Sory'n of Tol",
+    "form": "ledger",
+    "place": "Tol",
+    "enter": "open",
+    "sections": [
+      {
+        "id": "name",
+        "sealed": false,
+        "heading": "The name",
+        "blocks": [
+          {
+            "kind": "quote",
+            "text": "A young feline of keen mind and restless spirit. Her need to prove herself is the spark that most often sets her troubles alight."
+          },
+          {
+            "kind": "fact",
+            "text": "Brown fur with mocha swirls and a white muzzle."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "orachys",
+    "title": "Orachys of Tol",
+    "form": "ledger",
+    "place": "The Magical Guild",
+    "enter": "open",
+    "sections": [
+      {
+        "id": "name",
+        "sealed": false,
+        "heading": "The name",
+        "blocks": [
+          {
+            "kind": "fact",
+            "text": "Esteemed Archmage Orachys of Tol is Sory'n's father and head of the Magical Guild."
+          }
+        ]
+      },
+      {
+        "id": "assessment",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "neekonomicon",
+    "title": "The Nekonomicon",
+    "form": "ledger",
+    "place": "The Magical Guild",
+    "enter": "open",
+    "sections": [
+      {
+        "id": "grimoire",
+        "sealed": false,
+        "heading": "The grimoire",
+        "blocks": [
+          {
+            "kind": "fact",
+            "text": "The Nekonomicon is the Guild's grimoire."
+          }
+        ]
+      },
+      {
+        "id": "first-era",
+        "sealed": true
+      },
+      {
+        "id": "slip",
+        "sealed": true
+      },
+      {
+        "id": "margin",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "the-constant",
+    "title": "The failed Assessment",
+    "form": "ledger",
+    "place": "The knot that does not move",
+    "enter": "closed",
+    "sections": [
+      {
+        "id": "knot",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "voyd",
+    "title": "The Voyd",
+    "form": "ledger",
+    "place": "Before the first star",
+    "enter": "closed",
+    "sections": [
+      {
+        "id": "blackness",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "ember",
+    "title": "Ember",
+    "form": "ledger",
+    "place": "Two timestreams",
+    "enter": "closed",
+    "sections": [
+      {
+        "id": "fv",
+        "sealed": true
+      },
+      {
+        "id": "dp",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "chorus",
+    "title": "The Chorus of Truths",
+    "form": "ledger",
+    "place": "The Divergent Path",
+    "enter": "closed",
+    "sections": [
+      {
+        "id": "colours",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "entas",
+    "title": "The En'tas coin",
+    "form": "ledger",
+    "place": "The Furbidden Voyd",
+    "enter": "closed",
+    "sections": [
+      {
+        "id": "coin",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "the-return",
+    "title": "The return",
+    "form": "ledger",
+    "place": "Where the two tellings meet",
+    "enter": "closed",
+    "sections": [
+      {
+        "id": "loop",
+        "sealed": true
+      }
+    ]
+  },
+  {
+    "id": "sol-diary",
+    "title": "Denidrata Sol's diary",
+    "form": "vault",
+    "place": "A vault beneath the Archives.",
+    "enter": "vault",
+    "sections": []
+  }
+]

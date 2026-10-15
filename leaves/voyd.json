@@ -1,0 +1,13 @@
+{
+  "id": "voyd",
+  "title": "The Voyd",
+  "form": "ledger",
+  "place": "Before the first star",
+  "enter": "closed",
+  "sections": [
+    {
+      "id": "blackness",
+      "sealed": true
+    }
+  ]
+}

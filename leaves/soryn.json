@@ -1,0 +1,24 @@
+{
+  "id": "soryn",
+  "title": "Sory'n of Tol",
+  "form": "ledger",
+  "place": "Tol",
+  "enter": "open",
+  "sections": [
+    {
+      "id": "name",
+      "sealed": false,
+      "heading": "The name",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "A young feline of keen mind and restless spirit. Her need to prove herself is the spark that most often sets her troubles alight."
+        },
+        {
+          "kind": "fact",
+          "text": "Brown fur with mocha swirls and a white muzzle."
+        }
+      ]
+    }
+  ]
+}

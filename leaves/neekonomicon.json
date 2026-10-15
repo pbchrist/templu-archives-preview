@@ -1,0 +1,32 @@
+{
+  "id": "neekonomicon",
+  "title": "The Nekonomicon",
+  "form": "ledger",
+  "place": "The Magical Guild",
+  "enter": "open",
+  "sections": [
+    {
+      "id": "grimoire",
+      "sealed": false,
+      "heading": "The grimoire",
+      "blocks": [
+        {
+          "kind": "fact",
+          "text": "The Nekonomicon is the Guild's grimoire."
+        }
+      ]
+    },
+    {
+      "id": "first-era",
+      "sealed": true
+    },
+    {
+      "id": "slip",
+      "sealed": true
+    },
+    {
+      "id": "margin",
+      "sealed": true
+    }
+  ]
+}

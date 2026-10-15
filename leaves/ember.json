@@ -1,0 +1,17 @@
+{
+  "id": "ember",
+  "title": "Ember",
+  "form": "ledger",
+  "place": "Two timestreams",
+  "enter": "closed",
+  "sections": [
+    {
+      "id": "fv",
+      "sealed": true
+    },
+    {
+      "id": "dp",
+      "sealed": true
+    }
+  ]
+}

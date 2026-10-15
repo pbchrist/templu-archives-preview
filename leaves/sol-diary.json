@@ -1,0 +1,8 @@
+{
+  "id": "sol-diary",
+  "title": "Denidrata Sol's diary",
+  "form": "vault",
+  "place": "A vault beneath the Archives.",
+  "enter": "vault",
+  "sections": []
+}
