@@ -1,5 +1,12 @@
 const STORE = "templu-archives-marks-v1";
 
+/** Resolve static assets relative to this module (GitHub Pages project subpath). */
+const ROOT = new URL("./", import.meta.url);
+function asset(path) {
+  return new URL(String(path).replace(/^\//, ""), ROOT).href;
+}
+
+
 const state = {
   glyphs: [],
   byId: new Map(),
@@ -26,10 +33,10 @@ function esc(value) {
 
 async function load() {
   const [glyphsFile, leaves, say, loom] = await Promise.all([
-    fetch("/glyphs.json").then((res) => res.json()),
-    fetch("/leaves/index.json").then((res) => res.json()),
-    fetch("/utterances.json").then((res) => res.json()),
-    fetch("/loom.json").then((res) => res.json()),
+    fetch(asset("glyphs.json")).then((res) => res.json()),
+    fetch(asset("leaves/index.json")).then((res) => res.json()),
+    fetch(asset("utterances.json")).then((res) => res.json()),
+    fetch(asset("loom.json")).then((res) => res.json()),
   ]);
   state.glyphs = glyphsFile.glyphs;
   state.byId = new Map(glyphsFile.glyphs.map((glyph) => [glyph.id, glyph]));
@@ -252,14 +259,14 @@ async function openLeaf(id) {
     return;
   }
   try {
-    const { data } = await post("/api/leaf", { id, ...marksPayload() });
+    const { data } = await post(asset("api/leaf"), { id, ...marksPayload() });
     if (data.state) state.desk = data.state;
     renderHeld();
     renderLoom();
     if (!data.title) {
       $("marks-utter").textContent = data.utterance || state.say.unheard;
       if (known.enter === "open") {
-        const local = await fetch(`/leaves/${id}.json`).then((res) => res.json());
+        const local = await fetch(asset(`leaves/${id}.json`)).then((res) => res.json());
         renderLeaf(local);
       }
       return;
@@ -267,7 +274,7 @@ async function openLeaf(id) {
     renderLeaf(data);
   } catch {
     if (known.enter === "open") {
-      const local = await fetch(`/leaves/${id}.json`).then((res) => res.json());
+      const local = await fetch(asset(`leaves/${id}.json`)).then((res) => res.json());
       renderLeaf(local);
       return;
     }
@@ -292,7 +299,7 @@ async function offer() {
       utter.textContent = state.say.needSix;
       return;
     }
-    const { data } = await post("/api/marks/read", { version: 1, glyphs: state.slate });
+    const { data } = await post(asset("api/marks/read"), { version: 1, glyphs: state.slate });
     utter.textContent = data.utterance || "";
     if (data.state) remember(1, [...state.slate], data.state);
     return;
@@ -301,7 +308,7 @@ async function offer() {
     utter.textContent = state.say.needShort;
     return;
   }
-  const { data } = await post("/api/marks/press", {
+  const { data } = await post(asset("api/marks/press"), {
     ...marksPayload(),
     codeVersion: 1,
     code: state.slate,
@@ -311,7 +318,7 @@ async function offer() {
 }
 
 async function cutNew() {
-  const { data } = await post("/api/marks", {});
+  const { data } = await post(asset("api/marks"), {});
   $("marks-utter").textContent = data.utterance || "";
   if (data.glyphs) {
     remember(data.version, data.glyphs, data.state);
@@ -345,7 +352,7 @@ function bind() {
   $("seek-form").addEventListener("submit", async (event) => {
     event.preventDefault();
     const q = $("seek-q").value.trim();
-    const { data } = await post("/api/seek", { q, ...marksPayload() });
+    const { data } = await post(asset("api/seek"), { q, ...marksPayload() });
     if (data.state) {
       state.desk = data.state;
       renderHeld();
@@ -376,7 +383,7 @@ function setMode(mode) {
 
 async function refreshDesk() {
   if (!state.marks) return;
-  const { data } = await post("/api/marks/read", state.marks);
+  const { data } = await post(asset("api/marks/read"), state.marks);
   if (data.state) state.desk = data.state;
 }
 
