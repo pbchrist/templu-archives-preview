@@ -9,83 +9,97 @@
 </head>
 <body>
 <a class="skip" href="#stacks">Skip to the stacks</a>
-<div class="atmosphere" aria-hidden="true">
-  <div class="painted-bg"></div>
-  <div class="vignette"></div>
-  <div class="flicker"></div>
-</div>
-<header class="hero">
-  <div class="hero-glass">
-    <svg class="ziggurat" viewBox="0 0 320 78" aria-hidden="true">
-      <polygon points="160,2 196,24 124,24" fill="#7a5aa0"/>
-      <polygon points="118,26 202,26 226,44 94,44" fill="#543878"/>
-      <polygon points="86,46 234,46 262,62 58,62" fill="#3a2460"/>
-      <polygon points="48,64 272,64 300,76 20,76" fill="#241438"/>
-      <polygon points="156,6 164,6 163,16 157,16" fill="#f0c98a"/>
-    </svg>
-    <p class="eyebrow">Aard Voreath Templu</p>
-    <h1>The Templu Archives</h1>
-    <p class="inscription">Amethyst ziggurat · Guild seat, up north</p>
-    <p class="lede">The bottom floor keeps a vault. The vault does not open.</p>
+
+<!-- LANDING: exterior -->
+<section id="landing" class="landing" aria-label="The Templu exterior">
+  <div class="landing-paint" id="landing-paint" aria-hidden="true"></div>
+  <div class="landing-vignette" aria-hidden="true"></div>
+  <h1 class="landing-title">The Templu Archives</h1>
+  <button type="button" id="door" class="door-hotspot" aria-label="Enter through the Templu doorway">
+    <span class="door-glow" aria-hidden="true"></span>
+    <span class="door-hint">Enter</span>
+  </button>
+</section>
+
+<!-- Transition veil -->
+<div id="veil" class="veil" hidden aria-hidden="true"></div>
+
+<!-- INTERIOR: archives desk -->
+<div id="interior" class="interior" hidden>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="painted-bg interior-paint"></div>
+    <div class="vignette"></div>
+    <div class="flicker"></div>
   </div>
-</header>
 
-<p class="banner" role="note">PLACEHOLDER for Patrick: the voice of these stacks is not approved yet. Named facts and book quotations are from the canon notes. Every other line on this desk is flavor waiting for you. The floor plan is not a surveyed map.</p>
+  <header class="interior-mast">
+    <div class="hero-glass compact">
+      <p class="eyebrow">Aard Voreath Templu</p>
+      <h2 class="interior-title">The Templu Archives</h2>
+      <p class="lede">The bottom floor keeps a vault. The vault does not open.</p>
+      <button type="button" id="return-door" class="return-door">Return to the door</button>
+    </div>
+  </header>
 
-<main id="stacks">
-  <section class="panel" aria-labelledby="loom-title">
-    <p class="kicker">Cut into the Templu wall</p>
-    <h2 id="loom-title">The loom</h2>
-    <p class="flavor"><span class="ph">PLACEHOLDER for Patrick.</span> Three beads stand in for each telling until the chunk size is chosen. An unwalked bead is a Voyd disc. The return thread appears only when both tellings are held.</p>
-    <div id="loom" class="loom"></div>
-  </section>
+  <p class="banner" role="note">PLACEHOLDER for Patrick: the voice of these stacks is not approved yet. Named facts and book quotations are from the canon notes. Every other line on this desk is flavor waiting for you. The floor plan is not a surveyed map.</p>
 
-  <section class="panel" aria-labelledby="floor-title">
-    <p class="kicker">Beneath the Aard Voreath Templu</p>
-    <h2 id="floor-title">The floor of the Templu Archives</h2>
-    <div id="floor" class="floor"></div>
-  </section>
+  <main id="stacks">
+    <section class="panel" aria-labelledby="loom-title">
+      <p class="kicker">Cut into the Templu wall</p>
+      <h2 id="loom-title">The loom</h2>
+      <p class="flavor"><span class="ph">PLACEHOLDER for Patrick.</span> Three beads stand in for each telling until the chunk size is chosen. An unwalked bead is a Voyd disc. The return thread appears only when both tellings are held.</p>
+      <div id="loom" class="loom"></div>
+    </section>
 
-  <section class="panel" aria-labelledby="seek-title">
-    <p class="kicker">The stacks of the Templu</p>
-    <h2 id="seek-title">Ask among the leaves you may touch</h2>
-    <form id="seek-form" class="seek" role="search">
-      <label for="seek-q">What do you ask of the leaves already open to you?</label>
-      <div class="seek-row">
-        <input id="seek-q" name="q" type="search" autocomplete="off" maxlength="80" enterkeyhint="search">
-        <button type="submit">Ask</button>
+    <section class="panel" aria-labelledby="floor-title">
+      <p class="kicker">Beneath the Aard Voreath Templu</p>
+      <h2 id="floor-title">The floor of the Templu Archives</h2>
+      <div id="floor" class="floor"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="seek-title">
+      <p class="kicker">The stacks of the Templu</p>
+      <h2 id="seek-title">Ask among the leaves you may touch</h2>
+      <form id="seek-form" class="seek" role="search">
+        <label for="seek-q">What do you ask of the leaves already open to you?</label>
+        <div class="seek-row">
+          <input id="seek-q" name="q" type="search" autocomplete="off" maxlength="80" enterkeyhint="search">
+          <button type="submit">Ask</button>
+        </div>
+      </form>
+      <div id="seek-out" class="results" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="marks" aria-labelledby="marks-title">
+      <p class="kicker">Kept under the Templu</p>
+      <h2 id="marks-title">Claw-marks</h2>
+      <p class="flavor"><span class="ph">PLACEHOLDER for Patrick.</span> Six marks are the key to a desk in these stacks. A shorter scratching, four or five marks, presses one leaf. The marks are shown as claws. They are not letters.</p>
+      <div id="held" class="held"></div>
+      <div class="mode" role="group" aria-label="Which scratching">
+        <button type="button" id="mode-key" aria-pressed="true">Six marks</button>
+        <button type="button" id="mode-slip" aria-pressed="false">A shorter scratching</button>
       </div>
-    </form>
-    <div id="seek-out" class="results" aria-live="polite"></div>
-  </section>
+      <ol id="slate" class="slate" aria-label="Marks set on the slate"></ol>
+      <div id="keyboard" class="keyboard" role="group" aria-label="Claw marks"></div>
+      <div class="actions">
+        <button type="button" id="lift">Lift the last mark</button>
+        <button type="button" id="sweep">Sweep the slate</button>
+        <button type="button" id="offer">Offer the marks</button>
+        <button type="button" id="cut">Ask the stacks for six new marks</button>
+      </div>
+      <p id="marks-utter" class="utter" aria-live="polite"></p>
+    </section>
 
-  <section class="panel" id="marks" aria-labelledby="marks-title">
-    <p class="kicker">Kept under the Templu</p>
-    <h2 id="marks-title">Claw-marks</h2>
-    <p class="flavor"><span class="ph">PLACEHOLDER for Patrick.</span> Six marks are the key to a desk in these stacks. A shorter scratching, four or five marks, presses one leaf. The marks are shown as claws. They are not letters.</p>
-    <div id="held" class="held"></div>
-    <div class="mode" role="group" aria-label="Which scratching">
-      <button type="button" id="mode-key" aria-pressed="true">Six marks</button>
-      <button type="button" id="mode-slip" aria-pressed="false">A shorter scratching</button>
-    </div>
-    <ol id="slate" class="slate" aria-label="Marks set on the slate"></ol>
-    <div id="keyboard" class="keyboard" role="group" aria-label="Claw marks"></div>
-    <div class="actions">
-      <button type="button" id="lift">Lift the last mark</button>
-      <button type="button" id="sweep">Sweep the slate</button>
-      <button type="button" id="offer">Offer the marks</button>
-      <button type="button" id="cut">Ask the stacks for six new marks</button>
-    </div>
-    <p id="marks-utter" class="utter" aria-live="polite"></p>
-  </section>
+    <article id="leaf" class="leaf" hidden></article>
+  </main>
 
-  <article id="leaf" class="leaf" hidden></article>
-</main>
+  <footer class="colophon">
+    <p>The Templu Archives, beneath the Aard Voreath Templu.</p>
+    <p>A vault beneath the Archives. It does not open.</p>
+  </footer>
+</div>
 
-<footer class="colophon">
-  <p>The Templu Archives, beneath the Aard Voreath Templu.</p>
-  <p>A vault beneath the Archives. It does not open.</p>
-</footer>
+<script src="./gate.js" type="module"></script>
 <script src="./app.js" type="module"></script>
 </body>
 </html>

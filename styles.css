@@ -53,7 +53,141 @@ body {
   background: #05030a;
 }
 a { color: var(--gold); }
+body.is-inside { overflow: auto; }
+body:not(.is-inside) { overflow: hidden; }
 
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  background: rgba(20, 10, 28, .88);
+  color: var(--paper);
+  padding: .4rem .7rem;
+  border: 1px solid rgba(201, 182, 232, .35);
+}
+.skip:focus { top: .5rem; }
+
+/* ===== LANDING (exterior) ===== */
+.landing {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  background: #05030a;
+  --zoom-x: 50%;
+  --zoom-y: 68%;
+}
+.landing-paint {
+  position: absolute;
+  inset: 0;
+  background-color: #05030a;
+  background-image: image-set(
+    url("templu-exterior.webp") type("image/webp"),
+    url("templu-exterior.jpg") type("image/jpeg")
+  );
+  background-repeat: no-repeat;
+  transform-origin: var(--zoom-x) var(--zoom-y);
+  will-change: transform;
+}
+.landing-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 90% 80% at 50% 45%, transparent 40%, rgba(2,0,6,.35) 100%),
+    linear-gradient(180deg, rgba(2,0,6,.25) 0%, transparent 18%, transparent 80%, rgba(2,0,6,.4) 100%);
+}
+.landing-title {
+  position: absolute;
+  left: 50%;
+  top: 1.1rem;
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 2;
+  font-family: "Cinzel Decorative", Cinzel, Palatino, serif;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 3.2vw, 1.65rem);
+  letter-spacing: .06em;
+  color: #f4ead8;
+  text-shadow: 0 2px 18px rgba(0,0,0,.85), 0 0 24px rgba(80,40,120,.45);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.door-hotspot {
+  position: absolute;
+  z-index: 3;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.door-glow {
+  position: absolute;
+  inset: -30%;
+  border-radius: 40% 40% 30% 30%;
+  background: radial-gradient(ellipse at 50% 55%,
+    rgba(180, 140, 255, .55) 0%,
+    rgba(120, 70, 220, .28) 35%,
+    transparent 70%);
+  pointer-events: none;
+  opacity: .7;
+}
+.door-hint {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1.6rem;
+  font-family: Cinzel, Palatino, serif;
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #f0e2cc;
+  text-shadow: 0 1px 8px rgba(0,0,0,.9);
+  opacity: .85;
+  pointer-events: none;
+}
+.door-hotspot:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+.door-hotspot:hover .door-hint,
+.door-hotspot:focus-visible .door-hint { opacity: 1; }
+
+.landing.is-zooming .landing-paint {
+  animation: door-zoom 1.8s cubic-bezier(.4,0,.2,1) forwards;
+}
+.landing.is-zooming .landing-vignette,
+.landing.is-zooming .landing-title,
+.landing.is-zooming .door-hotspot {
+  animation: fade-out-fast .7s ease forwards;
+}
+@keyframes door-zoom {
+  0% { transform: scale(1); filter: brightness(1); }
+  55% { transform: scale(2.4); filter: brightness(.55); }
+  100% { transform: scale(4.2); filter: brightness(0); }
+}
+@keyframes fade-out-fast {
+  to { opacity: 0; }
+}
+
+.veil {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .7s ease;
+}
+.veil.is-black { opacity: 1; pointer-events: auto; }
+.veil.is-fading { opacity: 0; }
+
+/* ===== INTERIOR ===== */
+.interior { position: relative; z-index: 1; min-height: 100vh; }
 .atmosphere {
   position: fixed;
   inset: 0;
@@ -61,13 +195,13 @@ a { color: var(--gold); }
   pointer-events: none;
   overflow: hidden;
 }
-.painted-bg {
+.interior-paint {
   position: absolute;
   inset: 0;
   background-color: #05030a;
   background-image: image-set(
-    url("templu-archives-bg.webp") type("image/webp"),
-    url("templu-archives-bg.jpg") type("image/jpeg")
+    url("templu-interior.webp") type("image/webp"),
+    url("templu-interior.jpg") type("image/jpeg")
   );
   background-size: cover;
   background-position: center center;
@@ -77,60 +211,85 @@ a { color: var(--gold); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 98% 92% at 50% 45%,
-      transparent 0%,
-      transparent 62%,
-      rgba(4, 1, 8, .12) 82%,
-      rgba(2, 0, 6, .28) 95%,
-      rgba(2, 0, 6, .4) 100%),
-    linear-gradient(90deg, rgba(2, 1, 6, .18) 0%, transparent 14%, transparent 86%, rgba(2, 1, 6, .18) 100%),
-    linear-gradient(180deg, rgba(2, 1, 6, .14) 0%, transparent 14%, transparent 90%, rgba(2, 1, 6, .22) 100%);
+    radial-gradient(ellipse 95% 88% at 50% 45%,
+      transparent 0%, transparent 55%,
+      rgba(4,1,8,.14) 80%, rgba(2,0,6,.32) 100%),
+    linear-gradient(180deg, rgba(2,1,6,.18) 0%, transparent 16%, transparent 88%, rgba(2,1,6,.28) 100%);
 }
 .flicker {
   position: absolute;
   inset: 0;
   mix-blend-mode: soft-light;
-  opacity: .16;
+  opacity: .2;
   background:
-    radial-gradient(ellipse 55% 45% at 18% 28%, rgba(255, 190, 110, .35) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 82% 24%, rgba(255, 170, 80, .28) 0%, transparent 68%),
-    radial-gradient(ellipse 40% 35% at 50% 70%, rgba(255, 140, 60, .12) 0%, transparent 70%);
+    radial-gradient(ellipse 50% 40% at 20% 70%, rgba(255,170,80,.45) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 78% 65%, rgba(255,150,60,.35) 0%, transparent 68%),
+    radial-gradient(ellipse 40% 30% at 50% 80%, rgba(255,120,40,.18) 0%, transparent 70%);
 }
 
-.skip {
-  position: absolute;
-  left: 1rem;
-  top: -4rem;
-  z-index: 6;
-  background: rgba(20, 10, 28, .88);
-  color: var(--paper);
-  padding: .4rem .7rem;
-  border: 1px solid rgba(201, 182, 232, .35);
-}
-.skip:focus { top: .5rem; }
-
-.hero, .banner, main, .colophon { position: relative; z-index: 1; }
-.hero {
-  min-height: min(88vh, 56rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+.interior-mast, .banner, main, .colophon { position: relative; z-index: 1; }
+.interior-mast {
   max-width: 54rem;
   margin: 0 auto;
-  padding: 2rem 1.25rem 1.6rem;
+  padding: 1.4rem 1.1rem .2rem;
   text-align: center;
 }
-.hero-glass {
-  width: min(100%, 40rem);
-  padding: 1.1rem 1.2rem 1.35rem;
-  background: rgba(8, 4, 14, .42);
+.hero-glass.compact {
+  display: inline-block;
+  width: min(100%, 36rem);
+  padding: .75rem 1rem .9rem;
+  background: rgba(8, 4, 14, .48);
   border: 1px solid rgba(201, 182, 232, .28);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 220, 180, .12);
+  box-shadow: 0 14px 36px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,220,180,.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+.interior-title {
+  margin: 0;
+  font-family: "Cinzel Decorative", Cinzel, Palatino, serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  line-height: 1.15;
+}
+.return-door {
+  margin-top: .65rem;
+  font-family: Cinzel, Palatino, serif;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid rgba(201, 168, 100, .45);
+  padding: .35rem .7rem;
+  cursor: pointer;
+}
+.return-door:hover { background: rgba(201, 168, 100, .12); }
+
+.banner {
+  max-width: 54rem;
+  margin: .6rem auto 0;
+  padding: .75rem 1rem;
+  border: 1px solid rgba(201, 182, 232, .28);
+  color: var(--vellum);
+  background: rgba(10, 5, 16, .58);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: .98rem;
+  text-align: left;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .28);
+}
+main { max-width: 54rem; margin: 0 auto; padding: .4rem 1.1rem 4rem; }
+.panel {
+  margin: 1.15rem 0;
+  padding: 1.05rem 1.05rem 1.2rem;
+  background: rgba(10, 5, 18, .62);
+  border: 1px solid rgba(176, 146, 214, .32);
+  box-shadow: inset 0 1px 0 rgba(255, 220, 180, .14), 0 12px 32px rgba(0, 0, 0, .32);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-.ziggurat { width: min(16rem, 70vw); height: auto; display: block; margin: 0 auto .4rem; filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .45)); }
+
 .eyebrow, .kicker {
   margin: 0 0 .35rem;
   font-family: Cinzel, Palatino, serif;
@@ -152,29 +311,8 @@ h1 {
 }
 .inscription { margin: .35rem 0 0; color: #d9c6ef; font-family: Cinzel, Palatino, serif; letter-spacing: .08em; font-size: .92rem; }
 .lede { max-width: 34rem; margin: .8rem auto 0; color: #f0e2cc; }
-.banner {
-  max-width: 54rem;
-  margin: 0.4rem auto 0;
-  padding: .75rem 1rem;
-  border: 1px solid rgba(201, 182, 232, .28);
-  color: var(--vellum);
-  background: rgba(10, 5, 16, .58);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-size: .98rem;
-  text-align: left;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, .28);
-}
-main { max-width: 54rem; margin: 0 auto; padding: .4rem 1.1rem 4rem; }
-.panel {
-  margin: 1.15rem 0;
-  padding: 1.05rem 1.05rem 1.2rem;
-  background: rgba(10, 5, 18, .62);
-  border: 1px solid rgba(176, 146, 214, .32);
-  box-shadow: inset 0 1px 0 rgba(255, 220, 180, .14), 0 12px 32px rgba(0, 0, 0, .32);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+
+
 h2 { margin: 0 0 .55rem; font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.2; }
 .flavor { color: #f0e2cc; }
 .ph {
@@ -444,56 +582,36 @@ button[aria-pressed="true"] {
 .claw, .mark, .sealed, .vault-face { user-select: none; -webkit-user-select: none; }
 
 
+
 @media (max-width: 640px) {
-  .painted-bg { background-position: 62% 42%; }
-  .vignette {
-    background:
-      radial-gradient(ellipse 100% 100% at 50% 50%,
-        transparent 0%,
-        transparent 70%,
-        rgba(4, 1, 8, .08) 90%,
-        rgba(2, 0, 6, .18) 100%),
-      linear-gradient(90deg, rgba(2, 1, 6, .1) 0%, transparent 16%, transparent 84%, rgba(2, 1, 6, .1) 100%),
-      linear-gradient(180deg, rgba(2, 1, 6, .08) 0%, transparent 12%, transparent 92%, rgba(2, 1, 6, .14) 100%);
-  }
-  .flicker { opacity: .1; }
-  .hero {
-    min-height: 92vh;
-    justify-content: flex-start;
-    align-items: stretch;
-    padding: .75rem .7rem 1rem;
-  }
-  .hero-glass {
-    width: 100%;
-    max-width: none;
-    padding: .4rem .55rem .5rem;
-    background: rgba(8, 4, 14, .36);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-  }
-  .hero-glass .ziggurat { display: none; }
-  .hero-glass .lede { display: none; }
-  .hero-glass .inscription { display: none; }
-  .hero-glass h1 { font-size: clamp(1.2rem, 6.5vw, 1.55rem); margin: 0; }
-  .hero-glass .eyebrow { font-size: .55rem; margin: 0 0 .1rem; }
-  .banner { margin-top: .35rem; }
+  .landing-title { top: .7rem; font-size: 1.05rem; }
+  .door-hint { font-size: .62rem; margin-bottom: -1.35rem; }
+  .interior-paint { background-position: center center; }
   .keyboard { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .door[data-enter="vault"] { min-height: 8rem; }
   .vault-face { height: 14rem; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .door-glow { animation: door-pulse 2.4s ease-in-out infinite; }
   .flicker { animation: warm-flicker 4.2s ease-in-out infinite; }
 }
+@keyframes door-pulse {
+  0%, 100% { opacity: .45; transform: scale(1); }
+  50% { opacity: .95; transform: scale(1.08); }
+}
 @keyframes warm-flicker {
-  0%, 100% { opacity: .12; }
-  18% { opacity: .2; }
-  37% { opacity: .1; }
-  61% { opacity: .18; }
-  82% { opacity: .11; }
+  0%, 100% { opacity: .16; }
+  18% { opacity: .26; }
+  37% { opacity: .12; }
+  61% { opacity: .22; }
+  82% { opacity: .14; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .flicker { animation: none; opacity: .12; }
+  .door-glow, .flicker { animation: none; }
+  .landing.is-zooming .landing-paint { animation: none; }
+  .flicker { opacity: .14; }
+  .door-glow { opacity: .6; }
 }
