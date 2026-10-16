@@ -1,0 +1,178 @@
+[
+ {
+  "cat": "People",
+  "id": "cat",
+  "title": "C.A.T., Creator of All Tales",
+  "text": [
+   "Our transdimensional Narrator, capable of weaving tales and shaping their outcomes. His belief in free will often precludes the latter impulse.",
+   "He calls the failed Assessment one of the constants: a point in the tale that never shifts."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "soryn",
+  "title": "Sory'n of Tol",
+  "text": [
+   "A young feline of keen mind and restless spirit. Her need to prove herself is the spark that most often sets her troubles alight.",
+   "Brown fur with mocha swirls and a white muzzle. In the Chorus of Truths her colour is orange: heat without flame, will without body."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "orachys",
+  "title": "Esteemed Archmage Orachys of Tol",
+  "text": [
+   "Head of the Magical Guild and father of Sory'n. He chases the mastery of spacetime with an obsession that outshadows his obsidian coat."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "leba",
+  "title": "Leba Whitebelly",
+  "text": [
+   "Best friend of Sory'n and a model Guild aspirant. Her colour in the Chorus of Truths is brown."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "chartruel",
+  "title": "Chartru'el Duskyfur",
+  "text": [
+   "A philosophical silver-gray tom, inclined to pretension. He drew the map of Faelspire. His Chorus colour is silver."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "doye",
+  "title": "Doye Spottedlegs",
+  "text": [
+   "A sharp-witted tabby. His father, M'okto Spottedlegs, is the Guild Guardian of Arcane Secrets and rival to Orachys. Doye's Chorus colour is gold."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "greytails",
+  "title": "The Royal House of Greytail",
+  "text": [
+   "King Catophilus Greytail: bombastic, corpulent, devoted to Antidivinian wine.",
+   "Queen M'areta Greytail: regal and strategic; the real power."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "ertree",
+  "title": "Mother Ertree",
+  "text": [
+   "Spiritual leader of the Strays of the forest. Later canonized as P'thai En'ta Ertree, Our Eternal Matriarch."
+  ]
+ },
+ {
+  "cat": "People",
+  "id": "ember",
+  "title": "Ember",
+  "text": [
+   "The fire-panther familiar of Sory'n."
+  ]
+ },
+ {
+  "cat": "Places",
+  "id": "faelspire",
+  "title": "The Royal City of Faelspire",
+  "text": [
+   "The eternal Catpital. Within it: Ebon Heights, the Royal Palace, the Corpus, Eastclaw and Northclaw, Felixiata, Hatchery Row, and the Commerce District. The Forest Primeval wraps the southern walls."
+  ]
+ },
+ {
+  "cat": "Places",
+  "id": "templu",
+  "title": "Aard Voreath Templu",
+  "text": [
+   "The amethyst ziggurat that is the seat of the Guild, up north in Faelspire.",
+   "In its east wing lies the refectory, a windowless chamber where Voreathic baubles burn in iron sconces above long benches polished by generations of robed bodies."
+  ]
+ },
+ {
+  "cat": "Places",
+  "id": "sylvest",
+  "title": "Mount Sylvest and the Proving Ground",
+  "text": [
+   "Mount Sylvest rises in Faelspire. The Proving Ground lies on its southern slope."
+  ]
+ },
+ {
+  "cat": "Places",
+  "id": "acatdemy",
+  "title": "The Acatdemy",
+  "text": [
+   "The Acatdemy of Faelspire, with its Amethyst Atrium."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "baubles",
+  "title": "Voreathic baubles",
+  "text": [
+   "Infusible amethyst baubles. Sory'n kept a quartet on her dresser, one for each element she once aspired to master.",
+   "In the Templu refectory they burn in iron sconces along the walls."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "fresco",
+  "title": "The Ascension fresco",
+  "text": [
+   "Above the senior instructors' platform in the refectory hangs a stylized depiction of the Ascension: Leoran's paw stretched skyward, fur like fire, Voreath swirling in fractal ribbons around him, shedding First Era script."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "pact",
+  "title": "The Pact of the Nine tapestry",
+  "text": [
+   "A tapestry that hangs in the Templu. Leba waited for Sory'n beside it before the descent to the refectory."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "guardians",
+  "title": "Templu Guardian figurines",
+  "text": [
+   "Paw-sized soapstone renderings of a Templu Guardian, sold by trinket vendors. The one-eyed figurine is a Guild-approved talisman, mass-produced, blessed by a clerk who never conjured a spark in his life."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "script",
+  "title": "First Era script",
+  "text": [
+   "Script of the First Era, found in circular clusters and running along wall-markings in passages beneath. There must be an entire epic's worth of it down there."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "nekonomicon",
+  "title": "The Nekonomicon",
+  "text": [
+   "The grimoire of the Guild. New Magicians paw-print it at their induction ceremony.",
+   "One section of it is sealed."
+  ],
+  "sealed": true
+ },
+ {
+  "cat": "Things",
+  "id": "voreath",
+  "title": "Voreath and the Voyd",
+  "text": [
+   "Voreath is conventional magic, which borrows from nature. Voyd magic writes reality.",
+   "Pawsitions are the sacred paw forms used in casting. The Null State is the meditative threshold where mind and magic merge. The Nyand is the living ground through which wellsprings bleed."
+  ]
+ },
+ {
+  "cat": "Things",
+  "id": "leoran",
+  "title": "Leoran",
+  "text": [
+   "The Creator, the Endless One. The Mewniverse exists in his mind."
+  ]
+ }
+]

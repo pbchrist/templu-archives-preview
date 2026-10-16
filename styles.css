@@ -615,3 +615,11 @@ button[aria-pressed="true"] {
   .flicker { opacity: .14; }
   .door-glow { opacity: .6; }
 }
+
+/* Codex ledgers */
+.codex-list{list-style:none;padding:0;margin:1rem 0;display:flex;flex-wrap:wrap;gap:.5rem}
+.codex-list button{background:rgba(60,30,80,.45);border:1px solid rgba(200,160,255,.35);color:#f3e6c8;padding:.45rem .8rem;border-radius:4px;cursor:pointer;font:inherit}
+.codex-list button:hover{background:rgba(120,70,160,.55);box-shadow:0 0 12px rgba(255,170,80,.35)}
+.codex-tabs button[aria-pressed="true"]{box-shadow:0 0 14px rgba(255,180,90,.45)}
+.codex-entry{border-top:1px solid rgba(255,190,120,.3);padding-top:1rem;margin-top:.5rem}
+.codex-seal{display:flex;gap:.4rem;opacity:.75;filter:drop-shadow(0 0 6px rgba(190,120,255,.6))}
